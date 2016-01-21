@@ -38,14 +38,14 @@ You can run this for java:
 java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ConsumerExample localhost:2181 group1 test_topic 10 0
 ```
 
-Push mesaages to Kafka
-``` sh
-./kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
-```
-
 or this for scala:
 ``` sh
 java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaConsumerExample localhost:2181 group1 test_topic 10 0
+```
+
+Push mesaages to Kafka
+``` sh
+./kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
 ```
 
 ### run the producer
