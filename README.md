@@ -28,7 +28,8 @@ it will package compiled classes and its dependencies into a jar.
 
 ### cd into jar location
 ``` sh
-cd build/lib/
+  cd build/lib/
+```
 
 ### run the consumer
 This example contains two consumers written in Java and in scala.
