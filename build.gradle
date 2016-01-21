@@ -1,0 +1,57 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'scala'
+
+group = 'com.colobu'
+version = '0.1.0-SNAPSHOT'
+
+description = """kafka"""
+
+sourceCompatibility = 1.5
+targetCompatibility = 1.5
+
+
+
+repositories {
+        
+     maven { url "http://repo.maven.apache.org/maven2" }
+}
+dependencies {
+compile 'org.scala-lang:scala-library:2.11.2'
+compile 'org.scala-lang:scala-compiler:2.11.2'
+
+    compile(group: 'org.apache.kafka', name: 'kafka_2.11', version:'0.8.2.0') {
+exclude(module: 'jmxri')
+exclude(module: 'jmxtools')
+exclude(module: 'jms')
+exclude(module: 'junit')
+    }
+    testCompile group: 'junit', name: 'junit', version:'3.8.1'
+}
+
+sourceSets {
+   main {
+       scala {
+           srcDirs = ['src/main/scala']
+       }
+   }
+   test {
+       scala {
+           srcDirs = ['test/main/scala']
+       }
+   }
+}
+
+jar {
+
+    from(configurations.runtime.collect { it.isDirectory() ? it : zipTree(it) }) {
+       exclude "META-INF/*.SF"
+       exclude "META-INF/*.DSA"
+       exclude "META-INF/*.RSA"
+   }
+
+   manifest {
+       attributes "Main-Class": "com.colobu.kafka.ScalaConsumerExample"
+   }
+}
+
