@@ -28,26 +28,26 @@ bin/zkServer.sh start conf/zoo.cfg
 
 ### package this example
 ``` sh
-gradle clean build
+> gradle clean build
 ```
 
 it will package compiled classes and its dependencies into a jar.
 
 ### cd into jar location
 ``` sh
-  cd build/lib/
+> cd build/lib/
 ```
 
 ### run the consumer
 This example contains two consumers written in Java and in scala.
 You can run this for java:
 ``` sh
-java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ConsumerExample localhost:2181 group1 test_topic 10 0
+> java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ConsumerExample localhost:2181 group1 test_topic 10 0
 ```
 
 or this for scala:
 ``` sh
-java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaConsumerExample localhost:2181 group1 test_topic 10 0
+> java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaConsumerExample localhost:2181 group1 test_topic 10 0
 ```
 
 Stop the consumer Ctrl+C
@@ -55,28 +55,28 @@ Stop the consumer Ctrl+C
 
 ### Deploy and run the consumer in Spark
 ``` sh
-cp kafka_example-0.1.0-SNAPSHOT.jar ${SPARK_INSTALLATION_DIR}/bin
-cd ${SPARK_INSTALLATION_DIR}/bin
-sh spark-submit --class com.colobu.kafka.ScalaConsumerExample \
---master local[8] \
-kafka_example-0.1.0-SNAPSH.jar localhost:2181 group1 test_topic 10 0 group1 test_topic 10 0
+> cp kafka_example-0.1.0-SNAPSHOT.jar ${SPARK_INSTALLATION_DIR}/bin
+> cd ${SPARK_INSTALLATION_DIR}/bin
+> sh spark-submit --class com.colobu.kafka.ScalaConsumerExample \
+> --master local[8] \
+> kafka_example-0.1.0-SNAPSH.jar localhost:2181 group1 test_topic 10 0 group1 test_topic 10 0
 ``` 
 
 Push messages to Kafka
 ``` sh
-${KAFKA_INSTALLTION_DIR}/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
-Hi
-Hello
-What's Up.
+> ${KAFKA_INSTALLTION_DIR}/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
+> Hi
+> Hello
+> What's Up.
 ```
 
 ### run the producer
 This example also contains two producers written in Java and in scala.
 you can run this for java:
 ``` sh
-java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ProducerExample 10000 colobu localhost:9092
+> java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ProducerExample 10000 colobu localhost:9092
 ```
 or this for scala
 ``` sh
-java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaProducerExample 10000 colobu localhost:9092
+> java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaProducerExample 10000 colobu localhost:9092
 ```
