@@ -1,13 +1,14 @@
 kafka producer and consumer example in scala and java
 
 This is tested locally with 
+```s
   Gradle 2.0, 
   Java 1.8.0_65
   Scala 2.11.7
   Zookeeper 3.4.6
   Kafka 2.10-0.9.0.0
   Spark 1.6.0       : https://jaceklaskowski.gitbooks.io/mastering-apache-spark/content/spark-building-from-sources.html
-
+```
 ### start zookeeper
 if you have installed zookeeper, start it, or
 run the command:
