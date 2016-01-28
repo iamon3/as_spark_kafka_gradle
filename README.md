@@ -13,7 +13,7 @@ This is tested locally with
 if you have installed zookeeper, start it, or
 run the command:
 ``` sh
-bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/zkServer.sh start conf/zoo.cfg
 ```
 
 ### start kafka with default configuration
