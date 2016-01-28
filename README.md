@@ -26,8 +26,10 @@ bin/zkServer.sh start conf/zoo.cfg
 > bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 10 --topic test_topic
 ```
 
-### package this example
+### Download and package this example
 ``` sh
+> git clone https://github.com/iamon3/as_spark_kafka_gradle.git
+> cd as_spark_kafka_gradle
 > gradle clean build
 ```
 
