@@ -70,6 +70,8 @@ Push messages to Kafka
 > What's Up.
 ```
 
+These messages will be consumed and will be displayed on spark terminal.
+
 ### run the producer
 This example also contains two producers written in Java and in scala.
 you can run this for java:
