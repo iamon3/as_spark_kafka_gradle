@@ -50,9 +50,24 @@ or this for scala:
 java -cp kafka_example-0.1.0-SNAPSHOT.jar com.colobu.kafka.ScalaConsumerExample localhost:2181 group1 test_topic 10 0
 ```
 
-Push mesaages to Kafka
+Stop the consumer Ctrl+C
+
+
+### Deploy and run the consumer in Spark
 ``` sh
-./kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
+cp kafka_example-0.1.0-SNAPSHOT.jar ${SPARK_INSTALLATION_DIR}/bin
+cd ${SPARK_INSTALLATION_DIR}/bin
+sh spark-submit --class com.colobu.kafka.ScalaConsumerExample \
+--master local[8] \
+kafka_example-0.1.0-SNAPSH.jar localhost:2181 group1 test_topic 10 0 group1 test_topic 10 0
+``` 
+
+Push messages to Kafka
+``` sh
+${KAFKA_INSTALLTION_DIR}/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test_topic 
+Hi
+Hello
+What's Up.
 ```
 
 ### run the producer
